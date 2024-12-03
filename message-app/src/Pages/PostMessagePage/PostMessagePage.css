@@ -1,0 +1,22 @@
+.postMessagePage {
+    width: 411px;
+    height: 823px;
+    background-color: rgba(25, 39, 74, 1);
+    padding: 20px;
+    position: relative;
+
+    .logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 74px;
+        height: auto;
+        /* background-color: yellow; */
+
+        .logo-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}

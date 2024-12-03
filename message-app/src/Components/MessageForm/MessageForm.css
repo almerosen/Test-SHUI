@@ -1,0 +1,59 @@
+.message-form {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    /* background-color: #f9f9f9; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input {
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.2s ease;
+    }
+
+    #message {
+        height: 464px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        overflow-y: auto;
+        color: #333;
+        /* margin-bottom: 3.5rem; */
+
+    }
+
+    #username {
+        height: 72px;
+        /* border: 1px solid rgba(255, 255, 255, 1); */
+        background-color: transparent;
+        text-indent: 20px;
+        color: #ccc;
+    }
+
+    .submit-button {
+        height: 72px;
+        border: none;
+        border-radius: 4px;
+        background-color: rgba(239, 67, 67, 1);
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+}
+
+.error-text {
+    color: red;
+    text-align: center;
+}
+
+
+.message-form button:hover {
+    background-color: red;
+}

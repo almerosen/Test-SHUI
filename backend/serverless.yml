@@ -1,0 +1,51 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: almerosen
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: backend
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  environment:
+    JWT_SECRET_KEY: topSecret_Key
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "arn:aws:dynamodb:eu-north-1:*:table/messagesTable"
+
+functions:
+  getAllMessages:
+    handler: ./functions/getAllMessages/index.handler
+    events:
+      - httpApi:
+          path: /messages
+          method: get
+
+  createMessage:
+    handler: ./functions/createMessage/index.handler
+    events:
+      - httpApi:
+          path: /messages
+          method: post
+
+resources:
+  Resources:
+    messagesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: messagesTable
+        AttributeDefinitions:
+          - AttributeName: messageId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: messageId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
