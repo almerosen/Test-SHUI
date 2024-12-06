@@ -1,11 +1,18 @@
-import { expect, afterEach } from 'vitest';
-import { cleanup } from '@testing-library/react';
-import * as matchers from "@testing-library/jest-dom/matchers";
+import { afterEach } from "vitest";
+import { cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { server } from "./src/mocks/server";
 
-expect.extend(matchers);
+beforeAll(() => server.listen());
 
 afterEach(() => {
   cleanup();
 });
 
+afterAll(() => server.close());
+
+import { afterEach } from "vitest";
+import { cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { server } from "./src/mocks/server";
 

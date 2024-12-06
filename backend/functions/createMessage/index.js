@@ -11,7 +11,7 @@ export const handler = async (event) => {
         if (!username || !message) {
             return {
                 statusCode: 400,
-                body: JSON.stringify({ sucess: false, error: "Username and message are required" })
+                body: JSON.stringify({ success: false, error: "Username and message are required" })
             }
         }
     

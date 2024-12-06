@@ -6,12 +6,10 @@ import './App.css'
 function App() {
 
   return (
-    
       <Routes>
         <Route path="/" element={ <AllMessagesPage/> } />
-        <Route path="/messages" element={ <PostMessagePage/> } />
-      </Routes>
-      
+        <Route path="/message" element={ <PostMessagePage/> } />
+      </Routes>   
   )
 }
 

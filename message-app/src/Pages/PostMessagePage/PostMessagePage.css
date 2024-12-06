@@ -1,6 +1,6 @@
 .postMessagePage {
-    width: 411px;
-    height: 823px;
+    width: 100%;
+    min-height: 100vh;
     background-color: rgba(25, 39, 74, 1);
     padding: 20px;
     position: relative;
@@ -8,7 +8,7 @@
     .logo-container {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 5%;
         width: 74px;
         height: auto;
         /* background-color: yellow; */

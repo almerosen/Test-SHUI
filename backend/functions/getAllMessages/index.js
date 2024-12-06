@@ -8,9 +8,16 @@ export const handler = async (event) => {
             TableName: "messagesTable",
         })
 
+        if (Items === 0) {
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ success: true, messages: [] })
+            }
+        }
+
         return {
             statusCode: 200,
-            body: JSON.stringify({ success: true, data: Items })
+            body: JSON.stringify({ success: true, messages: Items })
         }
 
     } catch (error) {
